@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: tutor-screener-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RECRUITER_EMAIL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: DEFAULT_HR_EMAIL
+        sync: false
+      - key: DEFAULT_HR_PASSWORD
+        sync: false
+      - key: FRONTEND_BASE_URL
+        sync: false
